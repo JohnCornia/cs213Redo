@@ -4,11 +4,125 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Assignment 3</title>
+   <title>John's Enhanced Home Page</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+   <style>
+      .mountain {
+         position: relative;
+      }
+
+      .overlay {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0px;
+         bottom: 0px;
+         background-color: rgba(44, 41, 41, 0.5);
+         background-size: cover;
+         z-index: 2;
+      }
+
+      .column {
+         float: left;
+         width: 33%;
+         top: 200px;
+         margin: 1px;
+         position: relative;
+         text-align: center;
+         background-color: rgba(44, 41, 41, 0.55);
+
+      }
+
+      .personalInfo {
+         text-align: left;
+         margin: 15%;
+      }
+   </style>
 </head>
 
-<body>
-<p>This will be assignment #3</p>
+<body style="overflow: scroll;">
+   <div class="mountain">
+      <img class="teton" src="../images/grand_tetons.jpeg" alt="tetons">
+      <div class="overlay">
+         <header>
+            <img>
+            <h1>John's Portfolio</h1>
+            <p style="margin: 5px;">Software Engineering Major from Southeast Idaho</p>
+         </header>
+         <div class="column">
+            <p>About Me</p>
+            <a href="#bio"><img alt="icon" class="icon" src="../images/aboutMe.png"></a>
+         </div>
+         <div class="column">
+            <p>Projects & Collaboration</p>
+            <a href="#proCollab"><img alt="icon" class="icon" src="../images/ACM.jpeg"></a>
+         </div>
+         <div class="column">
+            <p>Proficiencies</p>
+            <a href="#skills"><img alt="icon" class="icon" src="../images/cplusplus.png"></a>
+         </div>
+      </div>
+   </div>
+   <div class="personalInfo">
+      <p id="bio">About Me</p>
+      <p>I am currently a Junior at Brigham Young
+         University-Idaho. My interest in
+         software started at a young age after reading the science fiction anthology "Machines That Think." This
+         book made me realize that technology can be a Pandora's box. Despite its shortcomings, I am interested in
+         software because it allow us greater optionality.</p>
+      <p>
+         The areas that interest me in computer science are machine learning, embedded systems, and
+         security. I am interested in working in the resource
+         extraction industry and especially in future extraterrestrial operations.
+      </p>
+   </div>
+   <div class="personalInfo">
+      <p id="proCollab">Projects & Collaboration</p>
+      <ul>
+         <li>Web Engineering</li>
+         <li>Proceedural Programming</li>
+         <li>Object-oriented Programming</li>
+         <li>Association of Computing Machinery (ACM)</li>
+      </ul>
+      <p>Interested in collaborating? Leave you information below</p>
+      <form>
+         <p>Name</p>
+         <input type="radio" id="mr">
+         <label for="mr">Mr.</label>
+         <input type="radio" id="mrs">
+         <label for="mrs">Mrs.</label>
+         <input type="radio" id="ms">
+         <label for="ms">Ms.</label><br>
+         <label for="fullName">First & Last name</label>
+         <input type="text" id="fullName" name="fullName"><br>
+         <p>Contact Method</p>
+         <input type="checkbox" id="email">
+         <label for="email">Email</label><br>
+         <input type="checkbox">
+         <label for="email">Phone</label><br>
+         <input type="checkbox">
+         <label for="email">Physical Mail</label><br>
+         <textarea>Enter mailing address, phone number, and/or email here</textarea><br>
+         <p>Best Time to Reach You</p>
+         <select>
+            <option value="">Morning</option>
+            <option value="">Afternoon</option>
+            <option value="">Evening</option>
+         </select><br>
+         <input type="reset">
+         <input type="submit">
+
+      </form>
+   </div>
+   <div class="personalInfo">
+      <p id="skills">Proficiencies</p>
+      <p>The majority of my experience is in C++ and I am in the process of learning
+         HTML, CSS, and JavaScript.</p>
+   </div>
+   <footer>
+      <hr><a href="../index.html">CS 213 Project Index | </a><a>CS 124 Projects | </a><a>CS
+         165 Projects | </a><a>ACM | </a><a href="https://byui.instructure.com/">I-Learn Dashboard</a>
+   </footer>
 </body>
 
 </html>
