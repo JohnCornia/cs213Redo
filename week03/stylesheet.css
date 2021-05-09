@@ -46,3 +46,7 @@ form {
    border-color: black;
    text-align: center;
 }
+
+input, select, textarea {
+   background-color:aliceblue;
+   }
