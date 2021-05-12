@@ -1,0 +1,26 @@
+div.leftNav {
+   float: left;
+   width: 20%;
+}
+
+div.mainContent {
+   float: left;
+   width: 80%;
+}
+
+table,
+td {
+   border: 1px solid black;
+}
+
+td:hover {
+   opacity: 0.2;
+}
+
+div.mainContent > p, table{
+   margin:0% 25%;
+}
+
+footer{
+   clear:both;
+}
