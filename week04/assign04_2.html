@@ -7,11 +7,38 @@
    <title>Assignment 4</title>
    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
    <style>
+      iframe {
+         width: 500px;
+         height: 300px;
 
+      }
+
+      span {
+         font-size: 22px;
+         color: black;
+         font-family: fantasy;
+      }
+
+      div.mainContent>p,
+      table,
+      iframe {
+         margin: 0% 25%;
+      }
+
+      p,
+      p>a {
+         color: white;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         font-size: 20px;
+      }
+
+      #coolBackdrop {
+         background-color: black;
+      }
    </style>
 </head>
 
-<body class="homestead">
+<body id="homestead">
    <img class="teton" src="../images/homestead.jpeg" alt="tetons">
    <div class="overlay">
       <header>
@@ -46,7 +73,7 @@
          </table>
       </div>
       <div class="mainContent">
-         <table>
+         <table id="coolBackdrop">
             <tr>
                <td><a
                      href="https://www.amazon.com/dp/1629143693/?coliid=I2X5NCX088YI6M&colid=1D9Z9LDI4KBJZ&psc=1&ref_=lv_ov_lig_dp_it">Water
@@ -70,11 +97,25 @@
          </table>
          <p>The best way to prevent catastrophic loss in the case of a natural disaster? Reduce your dependence on the
             fragile systems that currently provide your food, tools, and basic needs.</p>
-         <p>Something taken for granted is cooking oil.</p><a></a>
-         <p>"With a bottle of vegetable oil, one could acquire nearly every other desirable item. It had such value that
+         <p>Something I realized I have taken for granted is cooking oil.
+            <a
+               href="https://www.churchofjesuschrist.org/study/ensign/1982/06/how-beautiful-to-live-in-these-times-and-be-prepared?lang=eng">In
+               this</a> talk by Elder F. Enzio Busche, he states of war-torn Germany in WWII: "With a bottle of
+            vegetable oil, one
+            could acquire nearly every other desirable item. It had such value that
             with a quart of vegetable oil one could probably trade for three bushels of apples or three hundred pounds
-            of potatoes.”</p>
+            of potatoes.”
+         </p>
+         <p>In a long-term survival situation, you may have to extract your own oil from seeds of plants such as the
+            Canola. Check
+            out the video below to see how ancient oil presses were constructed</p>
+         <iframe src="https://www.youtube.com/embed/nVENKLP82X8" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
       </div>
+      <footer><span>
+            "Audentes fortuna iuvat."
+         </span></footer>
    </div>
 </body>
 
