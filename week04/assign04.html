@@ -5,10 +5,127 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 4</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+   <style>
+      .taleb {
+         margin: 0% 25%;
+         padding: 0px 0px 0px 5px;
+         width: 25%;
+         height: auto;
+      }
+
+      span {
+         font-size: 22px;
+         color: black;
+         font-family: cursive;
+      }
+
+      p {
+         color: whitesmoke;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         font-size: 20px;
+      }
+
+      div.mainContent>p, table {
+         margin: 0% 25%;
+      }
+
+      header{
+         background-color: black;
+      }
+   </style>
 </head>
 
-<body>
-<p>This will be assignment # 4</p>
+<body id="homestead">
+   <!--
+1. (Done) Create a business website that consists of two web pages. 
+Store the files for this site in a directory called week04 inside your public_html directory. 
+Name the pages assign04.html and assign04_2.html.
+
+2. (Done0The web site could be for a corporate web site, a small business site, an e-commerce site, or simply an entertainment site. 
+Let your creative juices flow. However, be professional! 
+These two web pages must use internal styles and external style sheets. 
+Use the external styles to give the two web pages a consistent look and feel. 
+Use the internal level styles for items unique to the individual web page.
+
+3. (Done) Both web pages must reference the same external style sheet. 
+Be sure your external style sheet has read privileges for the world (chmod 755 your.css), otherwise it won't work.
+
+4. (Done) Your business web site's home page must have a link to the second page of the web site. 
+Your second web page must have a link back to the home page.
+
+5. You must include the following style features:
+a. (Done) All styles must be internal styles and external styles, no in-line styles allowed.
+b. Five or more internal style rule-sets per web page. Make these internal styles different for each web page.
+c. (Done) One external style sheet with at least 10 different rule-sets.
+d. (Done) For the 10 different rule-sets use at least three different types of selector forms 
+(i.e simple selectors, class selectors, and id selectors).
+e. (Done) CSS to specify at least three different font families.
+f. (Done) CSS to specify at least three different font sizes.
+g. (Done) Different text colors.
+h. (Done) Different background colors for different HTML elements (For example: you could make a <div> element have a different 
+   background color).
+i. (Done) You must also use the <span> and <div> tags. These tags are useful for applying a combination of styles to different sections 
+   of your web page.
+j. (Done) Include images, internal links, and external links as needed.
+k. (Done) You must use margins and/or positioning to make the web pages look pleasing.
+
+6. Validate your pages using the HTML5 validator (Links to an external site.) and correct any errors. 
+7. Validate your CSS using the CSS validator (Links to an external site.) and correct any errors.
+8. You must use margins and/or positioning to make the web pages look pleasing.-->
+   <img src="../images/homestead.jpeg" alt="homestead">
+   <div class="overlay">
+      <header>
+         <h1>Becoming Antifragile</h1>
+      </header>
+      <div class="leftNav">
+         <table>
+            <tr>
+               <td><a href="./assign04.html">Home</a></td>
+            </tr>
+            <tr>
+               <td><a href="./assign04_2.html">Self Sufficency</a></td>
+            </tr>
+            <tr>
+               <td><a
+                     href="https://www.westside-barbell.com/products/westside-barbell-book-of-methods?variant=12417320710">Health
+                     & Fitness</a></td>
+            </tr>
+            <tr>
+               <td><a
+                     href="https://www.amazon.com/dp/1629143693/?coliid=I2X5NCX088YI6M&colid=1D9Z9LDI4KBJZ&psc=1&ref_=lv_ov_lig_dp_it">Emergency
+                     Preparedness</a></td>
+            </tr>
+            <tr>
+               <td><a href="https://toc.net/2019/10/27/nassim-talebs-barbell-investment-strategy/">Financial
+                     Independence</a></td>
+            </tr>
+            <tr>
+               <td><a href="https://www.amazon.com/Extreme-Privacy-Takes-Disappear-America/dp/1093757620">Security &
+                     Privacy</a></td>
+            </tr>
+         </table>
+      </div>
+      <div class="mainContent">
+         <p>This website is inspired by the "Incerto" book series by Nassim Nicholas Taleb. All the books of this series
+            have to do
+            with the unknowablility of the future. One of the books, "Antifragile," is named after a term coined by
+            Taleb
+            to describe something that not only is not affected by chaos, it is made better.</p>
+         <img class="taleb" src="../images/download.jpeg" alt="Nassim Taleb">
+         <p>The purpose of this website is to discuss how to put Taleb's philosophy into practice, since his book is
+            very high level. I have tried to be comprehensive with respect to the aspects of life that antifragility
+            should be applied to, but this is a work in progress.</p>
+         <p>Use the left navigation to change to the various pages that have more information about becoming more
+            antifragile. For now, most links are to books I am studying on the subject, but the self-sufficiency link
+            will take you to some of my thoughts.
+         </p>
+
+      </div>
+      <footer><span>
+            "Amor Fati"
+         </span></footer>
+   </div>
 </body>
 
 </html>
