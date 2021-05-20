@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+1. Create a webpage in your public_html/week05 directory named assign05.html. 
+(This must be new web page with new content. You may not use any of your 
+previous web pages.) This web page should look good on any device. It should 
+provide a good user experience when accessed from a phone, tablet, or laptop.
+2. (Done) `You must set the viewport in a <meta> tag.
+3. You must include at least 5 images. As the web page scales up and down, 
+text must wrap as necessary, and images must scale accordingly and not be 
+cutoff.
+4. You may choose to set a max-width to some of your images depending upon 
+how large you want them to expand.
+5. In addition to the images, your web page must include a <header>, 
+   <footer>, and some text content.
+6. Resize your web page to test its responsiveness.
+7. When you resize your browser window from laptop size to phone size, you 
+shouldn’t lose any content. There should be no horizontal scrolling required 
+to view content, no matter the browser window size. Only vertical scrolling 
+is allowed.
+8. All text must still be visible and should wrap and not be cut off. Images 
+should shrink properly and not lose content.
+9. There should be enough text that the responsiveness of the text at each 
+screen size is obvious.
+10. Create some responsive design CSS styles to use with your images and 
+other content.
+11. Hint: using max-width: 100%  and height: auto is very useful.
+12. Flexbox must be used.
+13. Media Queries must be used.
+14. Validate your page using both the HTML5 validator (Links to an external 
+site.) and the CSS validator (Links to an external site.). Update your 
+index.html page with a link to the assignment.-->
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 5</title>
+   <style>
+      img{
+         max-width: 100%;
+         height: auto;
+      }
+   </style>
 </head>
 
 <body>
-<p>This will be assignment # 5</p>
+   <header>
+      <h1>Barbell Strategy and Convexity</h1>
+      <img src="../images/barbell.jpeg">
+      <p>Investing for the Retail Investor</p>
+   </header>
+   <div>
+      <p>It is very unlikely that you are able to pick speculative securities that will make you alot of money before
+         hitting your "Uncle Point", or the point where you can no longer afford to invest. How can you invest money as
+         a
+         retail investor without being about to ensure your portfolio with calls and puts?</p>
+      <p>"Instead of putting your money into medium risk investments, you need to put a portion, say 85 to 90 percent in
+         extremely safe instruments, like Tresury bills..."</p>
+      <p>What Taleb calls elsewhere a "numaire repository of value" is composed of assets that have as little volatility
+         as
+         possible and are meant to store value.</p>
+      <p>Short term US treasury bills are a good way to store value while gaining interest to combat the inflation of
+         the
+         dollar.</p>
+      <img src="../images/tBills.jpeg">
+      <p>Foreign currencies can be considered a hedge against the US government's defecit</p>
+      <img src="../images/currencies.jpeg">
+      <p>Bullion comes with storage considerations, but can be another good option for storing value. Gold has been used
+         for thousands of years as a repository of value.</p>
+      <img src="../images/bullion.jpeg">
+      <p>"The remaining 10 to 15 percent you put in extremely speculative
+         bets, as leveraged as possible, preferably venture capital-style portfolios...The average will be medium risk
+         but
+         constitutes a positive exposure to the Black Swan."</p>
+      <p>By only having 10 percent in speculative investments, you have insured yourself from having a fall of more than
+         10% while leaving a limitless upside.</p><img src="../images/bitcoin.png">
+      <p>The reasoning behind this strategy is to allow you to make as many speculative bets as you can without ever
+         having to
+         give up. Rebalance whenever you want, sell some speculative stocks that have made money and buy more into your
+         safe investments. If you lose money on a speculative investment, you can just keep it and make another bet. The
+         result will be a convex curve, dipping at first before shooting up exponentially. Imagine having
+         invested in bitcoin in 2016. Give yourself the ability to not worry about the dips</p>
+   </div>
+   <footer>
+      <p>The above references an opinion and is for information purposes only. It is not intended to be investment
+         advice.
+         Seek a duly licensed professional for investment advice.</p>
+   </footer>
 </body>
 
 </html>
