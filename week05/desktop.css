@@ -1,0 +1,9 @@
+div.flex-container {
+   display: flex;
+   margin: 20px;
+}
+
+img {
+   max-width: 50%;
+   height: auto;
+}
