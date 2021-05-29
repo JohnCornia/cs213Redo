@@ -1,5 +1,36 @@
 /* On screens that are 992px wide or more */
 
+#flex_first {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+   margin-top: 1rem;
+   width: 75%;
+}
+
+li,
+div,
+label,
+option,
+p,
+h1,
+h2,
+value {
+   font-family: sans-serif;
+}
+
+.form-row {
+   display: flex;
+   flex-direction: column;
+}
+
+fieldset {
+   display: flex;
+   flex-direction: column;
+}
+
 @media screen and (min-width: 992px) {
    #grid_first {
       display: grid;
@@ -9,8 +40,8 @@
 
    #grid_second.blue_rounded {
       display: grid;
-      grid-template-columns: 33% 33% 33%;
-      grid-template-rows: 100px;
+      grid-template-columns: 20vw auto 20vw;
+      grid-template-rows: repeat(4, 100px);
       grid-gap: 1rem;
    }
 
@@ -23,14 +54,18 @@
 
    .box9 {
       display: flex;
+      justify-content: space-between;
    }
 
-   .flex_div {
+   /*.flex_div {
       display: flex;
-      flex: 15%;
+      flex: 15px;
       max-width: 15%;
       height: auto;
-   }
+      flex-wrap: wrap;
+      justify-content: center;
+   }*/
+
 }
 
 
@@ -45,8 +80,9 @@
 
    #grid_second.blue_rounded {
       display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: 100px;
+      /*grid-area: auto;*/
+      grid-template-columns: 48% auto;
+      grid-template-rows: repeat(6, 100px);
       grid-gap: 1rem;
    }
 
@@ -56,16 +92,20 @@
       grid-row: 1 / span 2;
    }
 
+   .box8 {
+      grid-row: span 4;
+   }
+
    .box9 {
+      grid-row: span 4;
       display: flex;
       flex-wrap: wrap;
    }
 
    .flex_div {
-      display: flex;
-      flex: 40%;
-      max-width: 40%;
-      height: auto;
+      flex: 1 0 35%;
+      margin: 10px;
+      height: fit-content;
    }
 }
 
