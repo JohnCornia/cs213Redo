@@ -103,8 +103,8 @@ fieldset {
    }
 
    .flex_div {
-      flex: 1 0 38%;
-      margin: 10px;
+      flex: 1 0 43%;
+      margin: 5px;
       height: fit-content;
    }
 }
