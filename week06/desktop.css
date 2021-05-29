@@ -13,14 +13,18 @@
 }
 
 h1{
-   flex: 1 1 70%;
+   flex: 0 1 70%;
    margin: 0 2.5%;
    font-size: 75px;
 }
 
 table{
-   flex: 1 1 80%;
-   margin:5px 10%;
+   flex: 0 1 20%;
+   margin: 2.5%;
+}
+
+.main_content{
+   flex: 0 1 70%;
 }
 /**************/
 
