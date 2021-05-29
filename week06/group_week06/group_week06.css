@@ -40,7 +40,7 @@ fieldset {
 
    #grid_second.blue_rounded {
       display: grid;
-      grid-template-columns: 25vw auto 25vw;
+      grid-template-columns: 20vw auto 20vw;
       grid-template-rows: repeat(4, 100px);
       grid-gap: 1rem;
    }
@@ -103,7 +103,8 @@ fieldset {
    }
 
    .flex_div {
-      flex: 1 0 42%;
+      flex: 0 1 42%;
+      justify-content: center;
       margin: 5px;
       height: fit-content;
    }
