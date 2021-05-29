@@ -1,3 +1,45 @@
+.flex_container {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.logo {
+   flex: 0 1 25%;
+}
+
+.logo_image {
+   width: 100%;
+   height: auto;
+}
+
+h1{
+   flex: 1 1 70%;
+   margin: 0 2.5%;
+   font-size: 75px;
+}
+
+table{
+   flex: 1 1 80%;
+   margin:5px 10%;
+}
+/**************/
+
+img{
+   width: 50%;
+   height: auto;
+}
+
+a:visited{
+   color: black;
+}
+
+
+a {
+   color: black;
+   text-decoration: none;
+   font-size: 20px;
+}
+
 table,
 td {
    border: 1px solid black;
@@ -11,19 +53,4 @@ p {
    font-size: 20px;
    text-align: justify;
    padding: 20px;
-}
-
-img{
-   width: 100%;
-   height: auto;
-}
-
-div.flex-container {
-   display: flex;
-   margin: 20px;
-}
-
-img {
-   max-width: 50%;
-   height: auto;
 }
