@@ -1,0 +1,29 @@
+table,
+td {
+   border: 1px solid black;
+}
+
+p {
+   font-size: 20px;
+   text-align: justify;
+   padding: 20px;
+}
+
+td:hover {
+   opacity: 0.2;
+}
+img{
+   width: 100%;
+   height: auto;
+}
+
+div.flex-container {
+   display: flex;
+
+   flex-direction: column;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
