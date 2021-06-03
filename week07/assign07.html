@@ -8,7 +8,38 @@
 </head>
 
 <body>
-<p>This will be assignment # 7</p>
+   <form>
+      <label for="apr">Annual Percentage Rate</label>
+      <input type="text" id="apr" name="apr"><br><br>
+      <label for="term">Loan Term (years)</label>
+      <input type="text" id="term" name="term"><br><br>
+      <label for="amount">Loan Amount</label>
+      <input type="text" id="amount" name="amount"><br><br>
+      <label for="payment">Monthly Payment</label>
+      <output type="text" id="payment"><br><br>
+         <button type="reset" id="clear">Clear</button>
+         <button type="button" id="calculate" onclick="validateAll()">Calculate</button>
+   </form>
+
+   <script>
+      function validateAPR() {
+
+      }
+      function validateLoanTerm() {
+
+      }
+      function validateLoanAmount() {
+
+      }
+      function validateAll() {
+         validateAPR();
+         validateLoanTerm();
+         validateLoanAmount();
+      }
+      function outputMonthlyPayment(params) {
+
+      }
+   </script>
 </body>
 
 </html>
