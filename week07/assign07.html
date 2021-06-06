@@ -5,22 +5,26 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 7</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
 
 <body>
    <form>
-      <label for="apr">Annual Percentage Rate</label>
-      <input type="text" id="apr" name="apr" onblur="validateAPR()" required><br><br>
-      <label for="term">Loan Term (years)</label>
-      <input type="text" id="term" name="term" onblur="validateLoanTerm()" required><br><br>
-      <label for="amount">Loan Amount</label>
-      <input type="text" id="amount" name="amount" required><br><br>
-      <label for="payment">Monthly Payment</label>
-      <output type="text" id="payment"></output><br><br>
-         <button type="reset" id="clear">Clear</button>
-         <button type="button" id="calculate" onclick="validateAll()">Calculate</button>
+      <fieldset>
+         <legend><h2>Mortgage Calculator</h2></legend>
+         <label for="apr">Annual Percentage Rate (%)</label>
+         <input type="text" id="apr" name="apr" onblur="validateAPR()" required><br><br>
+         <label for="term">Loan Term (Years)</label>
+         <input type="text" id="term" name="term" onblur="validateLoanTerm()" required><br><br>
+         <label for="amount">Loan Amount ($USD)</label>
+         <input type="text" id="amount" name="amount" required><br><br>
+         <label for="payment">Monthly Payment ($USD)</label>
+         <output id="payment"></output><br><br>
+         <button type="reset" id="clear" onclick="document.getElementById('apr').focus()">Clear</button>
+         <button type="button" id="calculate" onclick="validateAll()">Calculate</button><br><br>
+         <output id="errorMessage"></output>
+      </fieldset>
    </form>
-   <output id="errorMessage"></output>
 
    <script>
 
@@ -39,7 +43,7 @@
       function validateLoanTerm() {
          var term = document.getElementById("term").value;
          console.log(term);
-         if (term < 1 || term > 40 || term == "") {
+         if (term <= 0 || term > 40 || term == "") {
             document.getElementById("errorMessage").value = "Loan Term not within range"
             document.getElementById("term").focus();
             return false;
