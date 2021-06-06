@@ -10,34 +10,60 @@
 <body>
    <form>
       <label for="apr">Annual Percentage Rate</label>
-      <input type="text" id="apr" name="apr"><br><br>
+      <input type="text" id="apr" name="apr" onblur="validateAPR()" required><br><br>
       <label for="term">Loan Term (years)</label>
-      <input type="text" id="term" name="term"><br><br>
+      <input type="text" id="term" name="term" onblur="validateLoanTerm()" required><br><br>
       <label for="amount">Loan Amount</label>
-      <input type="text" id="amount" name="amount"><br><br>
+      <input type="text" id="amount" name="amount" required><br><br>
       <label for="payment">Monthly Payment</label>
-      <output type="text" id="payment"><br><br>
+      <output type="text" id="payment"></output><br><br>
          <button type="reset" id="clear">Clear</button>
          <button type="button" id="calculate" onclick="validateAll()">Calculate</button>
    </form>
+   <output id="errorMessage"></output>
 
    <script>
-      function validateAPR() {
 
+      function validateAPR() {
+         var apr = document.getElementById("apr").value;
+         console.log(apr);
+         if (apr <= 0 || apr > 25 || apr == "") {
+            document.getElementById("errorMessage").value = "Annual Percentage Rate not within range";
+            document.getElementById("apr").focus();
+            return false;
+         }
+         else
+            document.getElementById("errorMessage").value = "";
+         return true;
       }
       function validateLoanTerm() {
-
-      }
-      function validateLoanAmount() {
+         var term = document.getElementById("term").value;
+         console.log(term);
+         if (term < 1 || term > 40 || term == "") {
+            document.getElementById("errorMessage").value = "Loan Term not within range"
+            document.getElementById("term").focus();
+            return false;
+         }
+         else
+            document.getElementById("errorMessage").value = "";
+         return true;
 
       }
       function validateAll() {
-         validateAPR();
-         validateLoanTerm();
-         validateLoanAmount();
+         if (validateAPR() && validateLoanTerm()) {
+            outputMonthlyPayment();
+         }
       }
-      function outputMonthlyPayment(params) {
-
+      function outputMonthlyPayment() {
+         var loanAmount = document.getElementById("amount").value;
+         var apr = (document.getElementById("apr").value / 12) / 100;
+         var term = document.getElementById("term").value * 12;
+         console.log(loanAmount);
+         console.log(apr);
+         console.log(term);
+         var monthlyPayment = loanAmount * ((apr * ((1 + apr) ** term)) / (((1 + apr) ** term) - 1));
+         monthlyPayment = monthlyPayment.toFixed(2);
+         document.getElementById("payment").value = monthlyPayment;
       }
    </script>
 </body>
