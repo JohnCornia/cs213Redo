@@ -1,0 +1,16 @@
+fieldset {
+  background-color: lightblue;
+}
+
+#errorMessage{
+   color: red;
+}
+
+form{
+   margin: 0px 20%;
+}
+
+img{
+   width: 50%;
+   height: auto;
+}

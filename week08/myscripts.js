@@ -1,29 +1,128 @@
-function validateFirstName(){}
+var error = document.getElementById("errorMessage");
 
-function validateLastName(){}
-
-function validateAddress(){}
-
-function validate(){}
-
-function phone (){}
-
-function creditCard (cardNumber)
-{
-    //console.log(cardNumber.value);
-    var pattern = /(\d{4}\s){3}\d{4}/;
-    return pattern.test(card.cardNumberValue)
+function validateFirstName() {
+    var firstName = document.getElementById("first_name");
+    if (firstName.value == "") {
+        firstName.focus();
+        error.innerHTML = "First Name not valid"
+        return false;
+    }
+    else {
+        error.innerHTML = "";
+        return true;
+    }
 }
 
-function expirationDate(expirationDate){
-    var pattern = /([1][0-2]|[0][7-9])\/[2]([0][2-9][1-9]|[1-9]\d{2})/;
-    return pattern.test(expirationDate);
+function validateLastName() {
+    var lastName = document.getElementById("last_name");
+    if (lastName.value == "") {
+        lastName.focus();
+        error.innerHTML = "Last Name not valid"
+        return false;
+    }
+    else {
+        error.innerHTML = "";
+        return true;
+    }
 }
 
-function validateAll(){}
+function validateAddress() {
+    var address = document.getElementById("address");
+    if (address.value == "") {
+        address.focus();
+        error.innerHTML = "Address not valid"
+        return false;
+    }
+    else {
+        error.innerHTML = "";
+        return true;
+    }
+}
 
-//0 and 1-9
-//1 and 0-2
+function validatePhone() {
+    var phoneNumber = document.getElementById("phone");
+    var pattern = /(\d{3})-(\d{3})-(\d{4})/g;
+    if (pattern.test(phoneNumber.value)) {
+        error.innerHTML = "";
+        return true;
+    }
+    else {
+        phoneNumber.focus();
+        error.innerHTML = "Phone Number not valid"
+        return false;
+    }
+}
 
-//1-9
-//0 and 2-9 and 0-9
+function cardName() {
+    var card = document.getElementsByName("card");
+    if (!card[0].checked && !card[1].checked && !card[2].checked) {
+        card[0].focus();
+        error.innerHTML = "Credit Card Company not selected"
+        return false;
+    }
+    else {
+        total.innerHTML = "";
+        return true;
+    }
+}
+
+function creditCard() {
+    var cardNumber = document.getElementById("credit_card");
+    var pattern = /(\d{4}\s){3}\d{4}/g;
+    if (pattern.test(cardNumber.value)) {
+        error.innerHTML = "";
+        return true;
+    }
+    else {
+        cardNumber.focus();
+        error.innerHTML = "Credit Card Number not valid"
+        return false;
+    }
+}
+
+function expirationDate() {
+    var expirationDate = document.getElementById("exp_date");
+    var pattern = /((([1][0-2]|[0][7-9])\/[2][0][2][1])|(([1][0-2]|[0][1-9])\/[2][0]([2][2-9]|[3-9][0-9])))/g;
+    if (pattern.test(expirationDate.value)) {
+        error.innerHTML = "";
+        return true;
+    }
+    else {
+        expirationDate.focus();
+        error.innerHTML = "Expiration Date not valid"
+        return false;
+    }
+}
+
+function calculateTotal() {
+    var total = 0;
+    if (document.getElementById("item_0").checked) {
+        total += 80;
+    }
+    if (document.getElementById("item_1").checked) {
+        total += 15;
+    }
+    if (document.getElementById("item_2").checked) {
+        total += 25;
+    }
+    if (document.getElementById("item_3").checked) {
+        total += 60;
+    }
+
+    document.getElementById("total").innerHTML = "$" + total;
+}
+
+function validateAll() {
+
+    if (validateFirstName() &&
+        validateLastName() &&
+        validateAddress() &&
+        validatePhone() &&
+        creditCard() &&
+        cardName() &&
+        expirationDate()) {
+
+    }
+    else { }
+}
+
