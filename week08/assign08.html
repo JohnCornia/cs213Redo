@@ -8,7 +8,31 @@
 </head>
 
 <body>
-<p>This will be assignment # 8</p>
+   <h1>Archery Store</h1>
+<form>
+   <input type="text" name="first_name"><br>
+   <input type="text" name="last_name"><br>
+   <textarea name="phone"></textarea><br>
+   <p>$80</p><input name="item_0" type="checkbox"><img src="../images/bow.png" alt="bow"><br>
+   <p>$15</p><input name="item_1" type="checkbox"><img src="../images/arrow.jpg" alt="arrow"><br>
+   <p>$25</p><input name="item_2" type="checkbox"><img src="../images/archeryBook.jpg" alt="archery book"><br>
+   <p>$60</p><input name="item_3" type="checkbox"><img src="../images/target.jpg" alt="target"><br>
+   <output name="total">Total</output><br>
+   <label for="Visa">Visa</label>
+   <input type="radio" name="card" id="Visa"><br>
+   <label for="Mastercard">Mastercard</label>
+   <input type="radio" name="card" id="Mastercard"><br>
+   <label for="American_Express">American Express</label>
+   <input type="radio" name="card" id="American_Express"><br>
+   <label for="credit_card">Credit Card Number</label>
+   <input type="text" name="credit_card" id="credit_card" onblur="creditCard(this)"><br>
+   <label for="exp_date">Expiration Date</label>
+   <input type="text" name="exp_date" id="exp_date" onblur="expirationDate(this)"><br>
+   <input type="button" name="reset" value="Reset">
+   <input type="button" name="validate" value="Submit">
+   <script src="./myscripts.js"></script>
+</form>
+
 </body>
 
 </html>
