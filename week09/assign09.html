@@ -5,10 +5,28 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 9</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
 
 <body>
-<p>This will be assignment # 9</p>
+   <form>
+      <fieldset>
+         <legend>
+            <h1>Ajax Requests</h1>
+         </legend>
+         <select onchange="getCountryFile(this)" name="cars" id="cars">
+            <option value="canada">Canada</option>
+            <option value="mexico">Mexico</option>
+            <option value="russia">Russia</option>
+            <option value="usa">Usa</option>
+         </select><br>
+         <input type="text" id="fileName" value="json.txt">
+         <input type="button" value="Output File" onclick="getStudentInfo()">
+      </fieldset>
+   </form>
+   <pre id="countries"></pre>
+   <table id="students"></table>
+   <script src="./myscripts.js"></script>
 </body>
 
 </html>
