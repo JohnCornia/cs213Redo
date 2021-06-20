@@ -60,7 +60,12 @@
          //console.log(fileName);
          const xhttp = new XMLHttpRequest();
          xhttp.onload = function () {
+            if (this.readyState == 4 && this.status == 200) {
             display(this.responseText);
+            }
+            else{
+               document.getElementById("students").innerHTML = "File does not exist";
+            }
          }
          xhttp.open("GET", "./" + fileName, true);
          xhttp.send();
