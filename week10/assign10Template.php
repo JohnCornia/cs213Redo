@@ -34,6 +34,7 @@
       $directory[$i] = new fileN();
       
       $directory[$i]->$fileName = $files[$i];
+      console.log($files[$i]);
       //$directory[$i]->$fileType = filetype($files[$i]);
       //$directory[$i]->$cwd = $cwd;
      }
