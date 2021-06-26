@@ -7,8 +7,19 @@
    <title>Assignment 10</title>
 </head>
 
-<body>
-<p>This will be assignment # 10</p>
+<body onload="ajaxRequest()">
+   <p>This will be assignment # 10</p>
+
+   <script>
+      function ajaxRequest() {
+         const xhttp = new XMLHttpRequest();
+         /*xhttp.onload = function () {
+            code here
+         }*/
+         xhttp.open("GET", "./assign10Template.php", true);
+         xhttp.send();
+      }
+   </script>
 </body>
 
 </html>
