@@ -8,13 +8,13 @@
 </head>
 
 <body onload="ajaxRequest()">
-   <p>This will be assignment # 10</p>
+   <p id="test"></p>
 
    <script>
       function ajaxRequest() {
          const xhttp = new XMLHttpRequest();
          xhttp.onload = function () {
-            console.log(this);
+            document.getElementById("test").innerText = this.responseText;
          }
          xhttp.open("GET", "./assign10Template.php", true);
          xhttp.send();
