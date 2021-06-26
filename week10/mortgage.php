@@ -9,11 +9,11 @@
 </head>
 <body>
 
-<?php $apr = $_GET["apr"] ?>
-<?php $term = $_GET["term"] ?>
-<?php $amount = $_GET["amount"] ?>
+<?php $apr = $_GET["apr"] ?><br>
+<?php $term = $_GET["term"] ?><br>
+<?php $amount = $_GET["amount"] ?><br>
 <?php $monthlyPayment = $amount * (($apr * ((1 + $apr) ** $term)) / (((1 + $apr) ** $term) - 1)); 
-    echo $monthlyPayment;
+    echo number_format($monthlyPayment, 2,",",".");;
 ?>
 </body>
 </html>
