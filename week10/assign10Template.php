@@ -32,9 +32,10 @@
 
      for ($i=0; $i < $len; $i++) { 
       $directory[$i] = new fileN();
-      $directory[$i].$fileName = $files[$i];
-      $directory[$i].$fileType = filetype($directory[$i].$fileName);
-      $directory[$i].$cwd = $cwd;
+      
+      $directory[$i]->$fileName = $files[$i];
+      //$directory[$i].$fileType = filetype($directory[$i].$fileName);
+      //$directory[$i].$cwd = $cwd;
      }
      
 
