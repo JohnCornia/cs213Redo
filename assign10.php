@@ -33,7 +33,7 @@
      for ($i=0; $i < $len; $i++) { 
       $directory[$i] = new fileN();
       
-      $directory[$i]->$fileName = $files[$i];
+      $directory[$i]->fileName = $files[$i];
       //$directory[$i]->$fileType = filetype($files[$i]);
       //$directory[$i]->$cwd = $cwd;
      }
