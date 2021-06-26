@@ -13,9 +13,9 @@
    <script>
       function ajaxRequest() {
          const xhttp = new XMLHttpRequest();
-         /*xhttp.onload = function () {
-            code here
-         }*/
+         xhttp.onload = function () {
+            console.log(this);
+         }
          xhttp.open("GET", "./assign10Template.php", true);
          xhttp.send();
       }
