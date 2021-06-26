@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<?php echo $_GET["apr"] ?>
-<?php echo $_GET["term"] ?>
-<?php echo $_GET["amount"] ?>
-<?php $monthlyPayment = loanAmount * ((apr * ((1 + apr) ** term)) / (((1 + apr) ** term) - 1)); 
+<?php $apr = $_GET["apr"] ?>
+<?php $term = $_GET["term"] ?>
+<?php $amount = $_GET["amount"] ?>
+<?php $monthlyPayment = $amount * (($apr * ((1 + $apr) ** $term)) / (((1 + $apr) ** $term) - 1)); 
     echo $monthlyPayment;
 ?>
 </body>
