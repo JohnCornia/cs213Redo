@@ -13,7 +13,7 @@
 <?php $term = $_GET["term"] ?><br>
 <?php $amount = $_GET["amount"] ?><br>
 <?php $monthlyPayment = $amount * (($apr * ((1 + $apr) ** $term)) / (((1 + $apr) ** $term) - 1)); 
-    echo number_format($monthlyPayment, 2,",",".");;
+    echo number_format($monthlyPayment, 2,".",",");;
 ?>
 </body>
 </html>
