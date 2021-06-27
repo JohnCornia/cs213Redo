@@ -8,13 +8,22 @@
 </head>
 
 <body onload="ajaxRequest()">
-   <p id="test"></p>
+   <table id="directory"></table>
 
    <script>
       function ajaxRequest() {
          const xhttp = new XMLHttpRequest();
          xhttp.onload = function () {
-            document.getElementById("test").innerText = this.responseText;
+            const myObj = JSON.parse(this.responseText);
+            var tableString = "<th>File Name</th><th>Type</th><th>CWD</th><th>Action</th>";
+            for (let index = 0; index < (myObj.length); index++) {
+            tableString = tableString + "<tr><td>" + myObj[i].fileName + "</td>"
+               + "<td>" + myObj[i].fileType + "</td>"
+               + "<td>" + myObj[i].cwd + "</td>"
+               + "<td>" + "<button  onclick = \"window.location=\’" + myObj[i].fileName 
+               + ".html\’\">click to display</button>" + "</td></tr>"
+            }
+            document.getElementById("directory").innerText = tableString;
          }
          xhttp.open("GET", "../assign10.php", true);
          xhttp.send();
