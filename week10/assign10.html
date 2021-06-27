@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 10</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
 
 <body onload="ajaxRequest()">
@@ -21,7 +22,7 @@
                + "<td>" + myObj[index].fileType + "</td>"
                + "<td>" + myObj[index].cwd + "</td>"
                + "<td>" + "<button  onclick = \"window.location=\’" + myObj[index].fileName 
-               + ".html\’\">click to display</button>" + "</td></tr>"
+               + "\’\">click to display</button>" + "</td></tr>"
             }
             document.getElementById("directory").innerHTML = tableString;
          }
