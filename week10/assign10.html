@@ -17,10 +17,10 @@
             const myObj = JSON.parse(this.responseText);
             var tableString = "<th>File Name</th><th>Type</th><th>CWD</th><th>Action</th>";
             for (let index = 0; index < (myObj.length); index++) {
-            tableString = tableString + "<tr><td>" + myObj[i].fileName + "</td>"
-               + "<td>" + myObj[i].fileType + "</td>"
-               + "<td>" + myObj[i].cwd + "</td>"
-               + "<td>" + "<button  onclick = \"window.location=\’" + myObj[i].fileName 
+            tableString = tableString + "<tr><td>" + myObj[index].fileName + "</td>"
+               + "<td>" + myObj[index].fileType + "</td>"
+               + "<td>" + myObj[index].cwd + "</td>"
+               + "<td>" + "<button  onclick = \"window.location=\’" + myObj[index].fileName 
                + ".html\’\">click to display</button>" + "</td></tr>"
             }
             document.getElementById("directory").innerText = tableString;
