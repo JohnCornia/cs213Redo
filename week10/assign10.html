@@ -23,7 +23,7 @@
                + "<td>" + "<button  onclick = \"window.location=\’" + myObj[index].fileName 
                + ".html\’\">click to display</button>" + "</td></tr>"
             }
-            document.getElementById("directory").innerText = tableString;
+            document.getElementById("directory").innerHTML = tableString;
          }
          xhttp.open("GET", "../assign10.php", true);
          xhttp.send();
