@@ -16,12 +16,12 @@
          const xhttp = new XMLHttpRequest();
          xhttp.onload = function () {
             const myObj = JSON.parse(this.responseText);
-            var tableString = "<th>File Name</th><th>Type</th><th>CWD</th><th>Action</th>";
+            var tableString = "<tr><th>File Name</th><th>Type</th><th>CWD</th><th>Action</th></tr>";
             for (let index = 0; index < (myObj.length); index++) {
             tableString = tableString + "<tr><td>" + myObj[index].fileName + "</td>"
                + "<td>" + myObj[index].fileType + "</td>"
                + "<td>" + myObj[index].cwd + "</td>"
-               + "<td>" + "<button  onclick = \"window.location=’" + myObj[index].fileName + "’\">click to display</button>" + "</td></tr>"
+               + "<td>" + "<button  onclick = \"window.location=\../’" + myObj[index].fileName + "\’\">click to display</button>" + "</td></tr>"
             }
             document.getElementById("directory").innerHTML = tableString;
          }
