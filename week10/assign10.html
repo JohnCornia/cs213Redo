@@ -21,11 +21,11 @@
             tableString = tableString + "<tr><td>" + myObj[index].fileName + "</td>"
                + "<td>" + myObj[index].fileType + "</td>"
                + "<td>" + myObj[index].cwd + "</td>"
-               + "<td>" + "<button  onclick = \"window.location='../" + myObj[index].fileName + "’\">click to display</button>" + "</td></tr>"
+               + "<td>" + "<button  onclick = \"window.location='" + myObj[index].fileName + "’\">click to display</button>" + "</td></tr>"
             }
             document.getElementById("directory").innerHTML = tableString;
          }
-         xhttp.open("GET", "../assign10.php", true);
+         xhttp.open("GET", "assign10.php", true);
          xhttp.send();
       }
    </script>
