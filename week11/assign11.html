@@ -44,8 +44,8 @@
          <input type="text" name="exp_date" id="exp_date" onblur="expirationDate()" required><br><br>
          <input type="reset" name="reset" value="Reset" onclick="document.getElementById('first_name').focus()">
          <input type="submit" name="validate" value="Submit">
-         
-         <output name="errorMessage" id="errorMessage"></output><br>
+         <input hidden name="hiddenInput" name="purchaseTotal" id="hiddenInput">
+         <output name="errorMessage" id="errorMessage" ></output><br>
       </fieldset>
    </form>
    <script src="./myscripts.js"></script>
