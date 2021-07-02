@@ -85,7 +85,9 @@ function calculateTotal() {
         total += 60;
     }
 
-    document.getElementById("total").innerHTML = "$" + total;
+    var displayValue = document.getElementById("total");
+    displayValue.innerHTML = "$" + total;
+    displayValue.value = total;
 }
 
 function cardName() {

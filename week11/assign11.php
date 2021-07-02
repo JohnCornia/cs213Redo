@@ -47,8 +47,8 @@ echo "<br>Expiration Date: ";
 echo $expirationDate;
 
 ?>
-<input type="submit" name="submission" value="confirm">
-<input type="submit" name="submission" value="cancel">
+<input type="submit" name="submission" value="confirmed">
+<input type="submit" name="submission" value="canceled">
 </fieldset>
 </form>
 </body>

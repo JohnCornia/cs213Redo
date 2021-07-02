@@ -10,7 +10,7 @@
 <body>
     <?php
     $finalDecision = $_GET["submission"];
-    echo "Your purchase was ".$finalDecision;
+    echo "Your purchase was ".$finalDecision.".";
     ?>
 </body>
 </html>
