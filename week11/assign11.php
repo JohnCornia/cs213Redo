@@ -9,10 +9,8 @@
 </head>
 <body>
 
-<?php 
-
-$firstName = $_GET["first_name"]
-echo $firstName
+<?php $firstName = $_GET["first_name"]; 
+echo $firstName;
 if(!empty($_GET['items'])) {
 
     foreach($_GET['items'] as $value){
