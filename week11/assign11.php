@@ -18,7 +18,7 @@ $firstName = $_GET["first_name"];
 $lastName = $_GET["last_name"];
 $address = $_GET["address"];
 $phoneNumber = $_GET["phone"];
-$total = $_GET["hiddenInput"];
+$total = $_GET["purchaseTotal"];
 $expirationDate = $_GET["exp_date"];
 $card = $_GET["card"];
 
