@@ -20,7 +20,7 @@ $address = $_GET["address"];
 $phoneNumber = $_GET["phone"];
 $total = $_GET["purchaseTotal"];
 $expirationDate = $_GET["exp_date"];
-//$card = $_GET["card"];
+$card = $_GET["card"];
 
 echo "First Name: ";
 echo $firstName;
@@ -37,16 +37,13 @@ if(!empty($_GET['items'])) {
         echo $value.'<br/>';
     }
 }
-echo "<br>Credit Card: <br>";
-if(isset($_GET['card'])) {
-
-    foreach($_GET['card'] as $value){
-        echo $value.'<br/>';
-    }
-}
+echo "<br>Credit Card: ";
+echo $card;
 echo "<br>Expiration Date: ";
 echo $expirationDate;
-
+echo "<br>Total: ";
+echo $total;
+echo "<br>"
 ?>
 <input type="submit" name="submission" value="confirm">
 <input type="submit" name="submission" value="cancel">
