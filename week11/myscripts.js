@@ -87,6 +87,7 @@ function calculateTotal() {
 
     document.getElementById("total").innerHTML = "$" + total;
     document.getElementById("hiddenInput").value = total;
+    console.log(document.getElementById("hiddenInput").value);
 }
 
 function cardName() {
