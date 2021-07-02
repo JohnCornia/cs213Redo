@@ -30,18 +30,18 @@ echo "<br>Address: ";
 echo $address;
 echo "<br>Phone: ";
 echo $phoneNumber;
-echo "<br>Chosen Items: <br>";
+echo "<br>Chosen Items: ";
 if(!empty($_GET['items'])) {
 
     foreach($_GET['items'] as $value){
-        echo $value.'<br/>';
+        echo '<br/>'.$value;
     }
 }
 echo "<br>Credit Card: ";
 echo $card;
 echo "<br>Expiration Date: ";
 echo $expirationDate;
-echo "<br>Total: ";
+echo "<br>Total: $";
 echo $total;
 echo "<br>"
 ?>
