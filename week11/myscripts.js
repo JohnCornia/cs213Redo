@@ -53,6 +53,41 @@ function validatePhone() {
     }
 }
 
+function minimumSelection() {
+    var selectionMade = false;
+    for (let index = 0; index < 4 && !selectionMade; index++) {
+        selectionMade = document.getElementById("item_" + index).checked;
+    }
+
+    if (selectionMade == true) {
+        error.innerHTML = "";
+        return true;
+    }
+    else {
+        document.getElementById("item_0").focus();
+        error.innerHTML = "Please make at minimum one selection."
+        return false;
+    }
+}
+
+function calculateTotal() {
+    var total = 0;
+    if (document.getElementById("item_0").checked) {
+        total += 80;
+    }
+    if (document.getElementById("item_1").checked) {
+        total += 15;
+    }
+    if (document.getElementById("item_2").checked) {
+        total += 25;
+    }
+    if (document.getElementById("item_3").checked) {
+        total += 60;
+    }
+
+    document.getElementById("total").innerHTML = "$" + total;
+}
+
 function cardName() {
     var card = document.getElementsByName("card");
     if (!card[0].checked && !card[1].checked && !card[2].checked) {
@@ -102,7 +137,8 @@ function validateAll() {
         validatePhone() &&
         creditCard() &&
         cardName() &&
-        expirationDate()) {
+        expirationDate() &&
+        minimumSelection()) {
         return true;
     }
     else { 
