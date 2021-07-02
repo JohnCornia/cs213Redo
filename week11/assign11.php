@@ -18,8 +18,9 @@ $firstName = $_GET["first_name"];
 $lastName = $_GET["last_name"];
 $address = $_GET["address"];
 $phoneNumber = $_GET["phone"];
-$total = $_GET["total"];
+$total = $_GET["hiddenInput"];
 $expirationDate = $_GET["exp_date"];
+$card = $_GET["card"];
 
 echo "First Name: ";
 echo $firstName;
@@ -37,12 +38,7 @@ if(!empty($_GET['items'])) {
     }
 }
 echo "<br>Credit Card: <br>";
-if(!empty($_GET['card'])) {
-
-    foreach($_GET['card'] as $value){
-        echo $value.'<br/>';
-    }
-}
+echo $card;
 echo "<br>Expiration Date: ";
 echo $expirationDate;
 
