@@ -4,11 +4,51 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Assignment 11</title>
+   <title>Assignment 8</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
 
-<body>
-<p>This will be assignment # 11</p>
+<body onload="document.getElementById('first_name').focus()">
+   <form action="assign11.php" method="GET" onsubmit="return validateAll()">
+      <fieldset>
+         <legend>
+            <h1>Archery Store</h1>
+         </legend>
+         <label for="first_name">First Name</label>
+         <input type="text" name="first_name" id="first_name" onblur="validateFirstName()" required><br>
+         <label for="last_name">Last Name</label>
+         <input type="text" name="last_name" id="last_name" onblur="validateLastName()" required><br>
+         <label for="address">Address</label>
+         <textarea name="address" id="address" onblur="validateAddress()" required></textarea><br>
+         <label for="first_name">Phone</label>
+         <input type="text" name="phone" id="phone" onblur="validatePhone()" required><br><br>
+         <label for="item_0" id="item_label_0">$80</label>
+         <input name="items[]" value="Bow" id="item_0" type="checkbox" onchange="calculateTotal()"><img src="../images/bow.png" alt="bow"><br>
+         <label for="item_1" id="item_label_1">$15</label>
+         <input name="items[]" value="Arrows" id="item_1" type="checkbox" onchange="calculateTotal()"><img src="../images/arrow.jpg" alt="arrow"><br>
+         <label for="item_2" id="item_label_2">$25</label>
+         <input name="items[]" value="Archery Book" id="item_2" type="checkbox" onchange="calculateTotal()"><img src="../images/archeryBook.jpg" alt="archery book"><br>
+         <label for="item_3" id="item_label_3">$60</label>
+         <input name="items[]" value="Target" id="item_3" type="checkbox" onchange="calculateTotal()"><img src="../images/target.jpg" alt="target"><br><br>
+         <label for="total">Total: </label>
+         <output name="total" id="total"></output><br><br>
+         <label for="Visa">Visa</label>
+         <input type="radio" name="card" id="Visa"><br>
+         <label for="Mastercard">Mastercard</label>
+         <input type="radio" name="card" id="Mastercard"><br>
+         <label for="American_Express">American Express</label>
+         <input type="radio" name="card" id="American_Express"><br><br>
+         <label for="credit_card">Credit Card Number</label>
+         <input type="text" name="credit_card" id="credit_card" onblur="creditCard()" required><br>
+         <label for="exp_date">Expiration Date</label>
+         <input type="text" name="exp_date" id="exp_date" onblur="expirationDate()" required><br><br>
+         <input type="reset" name="reset" value="Reset" onclick="document.getElementById('first_name').focus()">
+         <input type="submit" name="validate" value="Submit">
+         
+         <output name="errorMessage" id="errorMessage"></output><br>
+      </fieldset>
+   </form>
+   <script src="./myscripts.js"></script>
 </body>
 
 </html>
