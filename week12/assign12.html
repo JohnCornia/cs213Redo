@@ -22,9 +22,10 @@
          <input name="endState" required><br><br>
          <button type="reset" id="clear">Clear</button>
          <input type="submit" onclick="ajaxRequest()">
+         <table id="distance"></table>
       </fieldset>
    </form>
-   <table id="distance"></table>
+
 </body>
 <script>
    function ajaxRequest() {
@@ -42,7 +43,7 @@
       xhttp.onload = function () {
          const myObj = JSON.parse(this.responseText);
          var tableString = "<tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Mode</th></tr>" 
-         + "<tr><th>" + myObj.trip.startcity; + "</th></tr>";
+         + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>" + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>" + myObj.trip.miles + "</td></tr>";
          
          document.getElementById("distance").innerHTML = tableString;
       }
