@@ -42,7 +42,7 @@
       xhttp.onload = function () {
          const myObj = JSON.parse(this.responseText);
          var tableString = "<tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Mode</th></tr>" 
-         + "<tr><th>" + myObj.trip; + "</th></tr>";
+         + "<tr><th>" + myObj.trip.startCity; + "</th></tr>";
          
          document.getElementById("distance").innerHTML = tableString;
       }
