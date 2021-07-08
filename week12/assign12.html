@@ -41,8 +41,9 @@
       
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
-         const myObj = JSON.parse(this);
-         var tableString = myObj;/*"<tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Mode</th></tr>" 
+         const myObj = JSON.parse(this.responseText);
+         console.log(myObj);
+         /*var tableString = "<tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Mode</th></tr>" 
          + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>" + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>" + myObj.trip.miles + "</td></tr>";*/
          
          document.getElementById("distance").innerHTML = tableString;
