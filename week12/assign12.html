@@ -23,7 +23,7 @@
          <label for="endState">End State</label>
          <input name="endState" required><br><br>
          <button type="reset" id="clear">Clear</button>
-         <input type="submit" onclick="ajaxRequest()">
+         <input type="submit" onclick="ajaxRequest()"><br>
          <table id="distance"></table>
       </fieldset>
    </form>
@@ -45,7 +45,7 @@
       xhttp.onload = function () {
          const myObj = JSON.parse(this.responseText);
          //console.log(myObj);
-         var tableString = "<tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Transportation Mode(s)</th></tr>"
+         var tableString = "<h2>Results</h2><br><tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Transportation Mode(s)</th></tr>"
             + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>"
             + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>"
             + myObj.trip.miles + "</td><td>";
