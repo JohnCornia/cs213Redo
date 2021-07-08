@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   <form>
+   <form onsubmit="return false">
       <fieldset>
          <legend><h2>Mileage Calculator</h2></legend>
          <label for="startCity">Start City</label>
@@ -21,7 +21,7 @@
          <label for="endState">End State</label>
          <input name="endState" required><br><br>
          <button type="reset" id="clear">Clear</button>
-         <button onclick="ajaxRequest()">Submit</button>
+         <input type="submit" onclick="ajaxRequest()">
       </fieldset>
    </form>
    <table id="distance"></table>
@@ -29,12 +29,16 @@
 <script>
    function ajaxRequest() {
 
-      var getFormData = document.getElementsByTagName("input").value;
-      var url = "/cgi-bin/cs213/mileageAjaxJSON?startCity" + getFormData;
-      //console.log(url);
-      document.getElementById("distance").innerHTML = tableString;
+      var getFormData = document.getElementsByTagName("INPUT");
+      var url = "/cgi-bin/cs213/mileageAjaxJSON?startCity="
+      + getFormData.startCity.value + "&startState=" 
+      + getFormData.startState.value + "&endCity="
+      + getFormData.endCity.value + "&endState="
+      + getFormData.endCity.value;
+      //console.log(getFormData.startCity.value);
+      //document.getElementById("distance").innerHTML = url;
       
-      /*const xhttp = new XMLHttpRequest();
+      const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
          const myObj = JSON.parse(this.responseText);
          var tableString = myObj;
@@ -42,7 +46,7 @@
          document.getElementById("distance").innerHTML = tableString;
       }
       xhttp.open("GET", url, true);
-      xhttp.send();*/
+      xhttp.send();
    }
 </script>
 </html>
