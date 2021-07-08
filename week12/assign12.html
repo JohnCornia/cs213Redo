@@ -17,19 +17,43 @@
          <label for="startCity">Start City</label>
          <input type="text" name="startCity" required><br><br>
          <label for="startState">Start State</label>
-         <input type="text" name="startState" required><br><br>
+         <input type="text" name="startState" onblur="validateState(this)" required><br><br>
          <label for="endCity">End City</label>
          <input type="text" name="endCity" required><br><br>
          <label for="endState">End State</label>
-         <input name="endState" required><br><br>
+         <input name="endState" onblur="validateState(this)" required><br><br>
          <button type="reset" id="clear">Clear</button>
-         <input type="submit" onclick="ajaxRequest()"><br>
+         <input type="submit" onclick="ajaxRequest(), validateAll()"><br>
          <table id="distance"></table>
+         <p id="errorMessage"></p>
       </fieldset>
    </form>
 
 </body>
 <script>
+   function validateAll()
+   {
+      var startState = document.getElementsByName("startState");
+      var endState = document.getElementsByName("endState");
+
+      validateState(startState);
+      validateState(endState);
+   }
+   
+   function validateState(state) {
+      var error = document.getElementById("errorMessage");
+      var pattern = /\w{2}/g;
+      if (pattern.test(state.value)) {
+         error.innerHTML = "";
+         return true;
+      }
+      else {
+         this.focus();
+         error.innerHTML = "State is not entered correctly, must abbreviated to two letters (e.g. 'ID' for Idaho)"
+         return false;
+      }
+   }
+
    function ajaxRequest() {
 
       var getFormData = document.getElementsByTagName("INPUT");
@@ -49,10 +73,10 @@
             + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>"
             + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>"
             + myObj.trip.miles + "</td><td>";
-            for (let index = 0; index < myObj.trip.tmode.length; index++) {
-               tableString += myObj.trip.tmode[index] + " ";
-            }
-            tableString += "</td></tr>";
+         for (let index = 0; index < myObj.trip.tmode.length; index++) {
+            tableString += myObj.trip.tmode[index] + " ";
+         }
+         tableString += "</td></tr>";
 
          document.getElementById("distance").innerHTML = tableString;
       }
