@@ -5,10 +5,44 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Assignment 12</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
 </head>
 
 <body>
-<p>This will be assignment # 12</p>
+   <form>
+      <fieldset>
+         <legend><h2>Mileage Calculator</h2></legend>
+         <label for="startCity">Start City</label>
+         <input type="text" name="startCity" required><br><br>
+         <label for="startState">Start State</label>
+         <input type="text" name="startState" required><br><br>
+         <label for="endCity">End City</label>
+         <input type="text" name="endCity" required><br><br>
+         <label for="endState">End State</label>
+         <input name="endState" required><br><br>
+         <button type="reset" id="clear">Clear</button>
+         <button onclick="ajaxRequest()">Submit</button>
+      </fieldset>
+   </form>
+   <table id="distance"></table>
 </body>
+<script>
+   function ajaxRequest() {
 
+      var getFormData = document.getElementsByTagName("input").value;
+      var url = "/cgi-bin/cs213/mileageAjaxJSON?startCity" + getFormData;
+      //console.log(url);
+      document.getElementById("distance").innerHTML = tableString;
+      
+      /*const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+         const myObj = JSON.parse(this.responseText);
+         var tableString = myObj;
+         
+         document.getElementById("distance").innerHTML = tableString;
+      }
+      xhttp.open("GET", url, true);
+      xhttp.send();*/
+   }
+</script>
 </html>
