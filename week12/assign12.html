@@ -42,7 +42,7 @@
    
    function validateState(state) {
       var error = document.getElementById("errorMessage");
-      var pattern = /\w{2}/g;
+      var pattern = /\w{2}/i;
       if (pattern.test(state.value)) {
          error.innerHTML = "";
          return true;
