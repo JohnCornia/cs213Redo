@@ -15,13 +15,13 @@
             <h2>Mileage Calculator</h2>
          </legend>
          <label for="startCity">Start City</label>
-         <input type="text" name="startCity" required><br><br>
+         <input type="text" name="startCity" id="startCity" required><br><br>
          <label for="startState">Start State</label>
-         <input type="text" name="startState" onblur="validateState(this)" required><br><br>
+         <input type="text" name="startState" id="startState" onblur="validateState(this)" required><br><br>
          <label for="endCity">End City</label>
-         <input type="text" name="endCity" required><br><br>
+         <input type="text" name="endCity" id="endCity" required><br><br>
          <label for="endState">End State</label>
-         <input name="endState" onblur="validateState(this)" required><br><br>
+         <input name="endState" id="endState" onblur="validateState(this)" required><br><br>
          <button type="reset" id="clear">Clear</button>
          <input type="submit" onclick="ajaxRequest(), validateAll()"><br>
          <table id="distance"></table>
@@ -29,60 +29,59 @@
       </fieldset>
    </form>
 
-</body>
-<script>
-   function validateAll()
-   {
-      var startState = document.getElementsByName("startState");
-      var endState = document.getElementsByName("endState");
+   <script>
+      function validateAll() {
+         var startState = document.getElementsByName("startState");
+         var endState = document.getElementsByName("endState");
 
-      validateState(startState);
-      validateState(endState);
-   }
-   
-   function validateState(state) {
-      var error = document.getElementById("errorMessage");
-      var pattern = /^\w{2}$/i;
-      if (pattern.test(state.value)) {
-         error.innerHTML = "";
-         return true;
+         validateState(startState);
+         validateState(endState);
       }
-      else {
-         state.focus();
-         error.innerHTML = "State is not entered correctly, must abbreviated to two letters (e.g. 'ID' for Idaho)"
-         return false;
-      }
-   }
 
-   function ajaxRequest() {
-
-      var getFormData = document.getElementsByTagName("INPUT");
-      var url = "/cgi-bin/cs213/mileageAjaxJSON?startCity="
-         + getFormData.startCity.value + "&startState="
-         + getFormData.startState.value + "&endCity="
-         + getFormData.endCity.value + "&endState="
-         + getFormData.endState.value;
-      //console.log(getFormData.startCity.value);
-      //document.getElementById("distance").innerHTML = url;
-
-      const xhttp = new XMLHttpRequest();
-      xhttp.onload = function () {
-         const myObj = JSON.parse(this.responseText);
-         //console.log(myObj);
-         var tableString = "<h2>Results</h2><br><tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Transportation Mode(s)</th></tr>"
-            + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>"
-            + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>"
-            + myObj.trip.miles + "</td><td>";
-         for (let index = 0; index < myObj.trip.tmode.length; index++) {
-            tableString += myObj.trip.tmode[index] + " ";
+      function validateState(state) {
+         var error = document.getElementById("errorMessage");
+         var pattern = /^\w{2}$/i;
+         if (pattern.test(state.value)) {
+            error.innerHTML = "";
+            return true;
          }
-         tableString += "</td></tr>";
-
-         document.getElementById("distance").innerHTML = tableString;
+         else {
+            state.focus();
+            error.innerHTML = "State is not entered correctly, must abbreviated to two letters (e.g. 'ID' for Idaho)"
+            return false;
+         }
       }
-      xhttp.open("GET", url, true);
-      xhttp.send();
-   }
-</script>
+
+      function ajaxRequest() {
+
+         var getFormData = document.getElementsByTagName("INPUT");
+         var url = "/cgi-bin/cs213/mileageAjaxJSON?startCity="
+            + getFormData.startCity.value + "&startState="
+            + getFormData.startState.value + "&endCity="
+            + getFormData.endCity.value + "&endState="
+            + getFormData.endState.value;
+         //console.log(getFormData.startCity.value);
+         //document.getElementById("distance").innerHTML = url;
+
+         const xhttp = new XMLHttpRequest();
+         xhttp.onload = function () {
+            const myObj = JSON.parse(this.responseText);
+            //console.log(myObj);
+            var tableString = "<h2>Results</h2><br><tr><th>Starting Point</th><th>Ending Destination</th><th>Miles</th><th>Transportation Mode(s)</th></tr>"
+               + "<tr><td>" + myObj.trip.startcity + ", " + myObj.trip.startstate + "</td><td>"
+               + myObj.trip.endcity + ", " + myObj.trip.endstate + "</td><td>"
+               + myObj.trip.miles + "</td><td>";
+            for (let index = 0; index < myObj.trip.tmode.length; index++) {
+               tableString += myObj.trip.tmode[index] + " ";
+            }
+            tableString += "</td></tr>";
+
+            document.getElementById("distance").innerHTML = tableString;
+         }
+         xhttp.open("GET", url, true);
+         xhttp.send();
+      }
+   </script>
+</body>
 
 </html>
