@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Assignment 13</title>
+   <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+<body onload="ajaxRequest()">
+   <form action="assign13.php" method="GET">
+      <fieldset>
+         
+         <legend>Piano Festival Registration</legend>
+         <label for="performance">Performance Type</label>
+         <select name="performance"><option>Solo</option><option>Duet</option><option>Concerto</option></select><br><br>
+         <label for="first_name">First Name</label>
+         <input type="text" name="first_name"><br><br>
+         <label for="last_name">Last Name</label>
+         <input type="text" name="last_name"><br><br>
+         <label for="student_id">Student ID</label>
+         <input type="text" name="student_id"><br><br>
+         <label for="first_name_2">Second Musician First Name</label>
+         <input type="text" name="first_name_2"><br><br>
+         <label for="last_name_2">Second Musician Last Name</label>
+         <input type="text" name="last_name_2"><br><br>
+         <label for="student_id_2">Second Musician Student ID</label>
+         <input type="text" name="student_id_2"><br><br>
+         <label for="skill">Skill Level</label>
+         <select name="skill"><option>Beginner</option><option>Intermediate</option><option>Pre-advanced</option><option>Advanced</option></select><br><br>
+         <label for="instrument">Instrument</label>
+         <select name="instrument"><option>Piano</option><option>Voice</option><option>String</option><option>Organ</option><option>Other</option></select><br><br>
+         <label for="location">Building</label>
+         <select name="location"><option>Snow</option><option>Austin</option><option>Benson</option><option>Manwaring Center</option><option>Other</option></select><br><br>
+         <label for="room">Room</label>
+         <input type="text" name="room"><br><br>
+         <label for="time_slot">Time Slot</label>
+         <input type="text" name="time_slot"><br><br>
+         <button type="submit">Register</button>
+         <button type="reset">Clear</button><br><br>
+         <table id="registry"></table>
+      </fieldset>
+   </form>
+   <script src="./myscripts.js"></script>
+</body>
+
+</html>
