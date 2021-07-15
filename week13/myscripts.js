@@ -138,21 +138,24 @@ function ajaxRequest() {
 }
 
 function buildTable(myObj) {
-    var tableString = "<tr><th>Performance</th><th>First Name</th><th>Last Name</th><th>Student ID</th>";
 
-    if (myObj.performance == "Duet") {
-        tableString += "<th>Second Student First Name</th><th>Second Student Last Name</th><th>Second Student Student ID</th>";
+    var tableString = "<tr><th>Performance</th><th>First Name</th><th>Last Name</th><th>Student ID</th><th>Second Student First Name</th><th>Second Student Last Name</th><th>Second Student Student ID</th><th>Skill</th><th>Instrument</th><th>Location</th><th>Room</th><th>Time Slot</th></tr>";
+    for (let i = 0; i < myObj.length; i++) {
+
+        /*if (myObj[i].performance == "Duet") {
+            tableString += "<th>Second Student First Name</th><th>Second Student Last Name</th><th>Second Student Student ID</th>";
+        }*/
+
+        //tableString += "<th>Skill</th><th>Instrument</th><th>Location</th><th>Room</th><th>Time Slot</th></tr>"
+        tableString += "<tr><td>" + myObj[i].performance + "</td><td>" + myObj[i].first_name + "</td><td>" + myObj[i].last_name + "</td><td>" + myObj[i].student_id + "</td>";
+
+        //if (myObj[i].performance == "Duet") {
+        tableString += "<td>" + myObj[i].first_name_2 + "</td><td>" + myObj[i].last_name_2 + "</td><td>" + myObj[i].student_id_2 + "</td>";
+        //}
+
+        tableString += "<td>" + myObj[i].skill + "</td><td>" + myObj[i].instrument + "</td><td>" + myObj[i].location + "</td><td>" + myObj[i].room + "</td><td>" + myObj[i].time_slot + "</td></tr>";
     }
-
-    tableString += "<th>Skill</th><th>Instrument</th><th>Location</th><th>Room</th><th>Time Slot</th></tr>"
-        + "<tr><td>" + myObj.performance + "</td><td>" + myObj.first_name + "</td><td>" + myObj.last_name + "</td><td>" + myObj.student_id + "</td>";
-
-    if (myObj.performance == "Duet") {
-        tableString += "<td>" + myObj.first_name_2 + "</td><td>" + myObj.last_name_2 + "</td><td>" + myObj.student_id_2 + "</td>";
-    }
-
-    tableString += "<td>" + myObj.skill + "</td><td>" + myObj.instrument + "</td><td>" + myObj.location + "</td><td>" + myObj.room + "</td><td>" + myObj.time_slot + "</td></tr>";
-
     document.getElementById("registry").innerHTML = tableString;
+
 }
 

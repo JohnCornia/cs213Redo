@@ -12,11 +12,24 @@ $myObj->location = $_GET['location'];
 $myObj->room = $_GET['room'];
 $myObj->time_slot = $_GET['time_slot'];
 
-$myJSON = json_encode($myObj);
+$myArray = array($myObj);                       //create a new array of objects*/
 
-//echo $myJSON;
+$file = fopen("./data/data.json","w+");             //open file, read/write
+$fileTmp = file_get_contents("./data/data.json");        //get JSON array
+echo empty($fileTmp);
+if (empty($fileTmp)) {                              //check to see if it is empty
+    
+    $myJSON = json_encode($myArray);                //if empty, encode it as JSON and...
+    
+    fwrite($file, $myJSON);                         //...write to the file
+}
+else {
+$tempArray = json_decode($fileTmp);                 //turn JSON array into PHP array
+$newArray = array_push($tempArray, $myArray);         //add array to array
+$myJSON = json_encode($newArray);                   //turn array back into JSON
 
-$file = fopen("./data/data.json","a");
-fwrite($file, $myJSON);
+fwrite($file, $myJSON); //$myJSON);
+}
 fclose($file);
+
 ?>
