@@ -14,7 +14,7 @@ function buildGetRequest() {
     var room = document.getElementsByName("room");
     var time_slot = document.getElementsByName("time_slot");
     var getRequestString = "performance=" + performance[0].value + "&first_name_1=" + first_name_1[0].value + "&last_name_1=" + last_name_1[0].value + "&student_id_1=" + student_id_1[0].value + "&first_name_2=" + first_name_2[0].value + "&last_name_2=" + last_name_2[0].value + "&student_id_2=" + student_id_2[0].value + "&skill=" + skill[0].value + "&instrument=" + instrument[0].value + "&location=" + location[0].value + "&room=" + room[0].value + "&time_slot=" + time_slot[0].value;
-    
+
     return getRequestString;
 
 }
@@ -47,24 +47,24 @@ function isDuet() {
 function ajaxRequest() {
 
     var performance = document.getElementsByName("performance");
-         var first_name_1 = document.getElementsByName("first_name");
-         //console.log(first_name_1[0].value);
-         var last_name_1 = document.getElementsByName("last_name");
-         var student_id_1 = document.getElementsByName("student_id");
-         var first_name_2 = document.getElementsByName("first_name_2");
-         var last_name_2 = document.getElementsByName("last_name_2");
-         var student_id_2 = document.getElementsByName("student_id_2");
-         var skill = document.getElementsByName("skill");
-         var instrument = document.getElementsByName("instrument");
-         var location = document.getElementsByName("location");
-         var room = document.getElementsByName("room");
-         var time_slot = document.getElementsByName("time_slot");
-         var getRequestString = "performance=" + performance[0].value + "&first_name="
-            + first_name_1[0].value + "&last_name=" + last_name_1[0].value + "&student_id="
-            + student_id_1[0].value + "&first_name_2=" + first_name_2[0].value + "&last_name_2="
-            + last_name_2[0].value + "&student_id_2=" + student_id_2[0].value + "&skill="
-            + skill[0].value + "&instrument=" + instrument[0].value + "&location="
-            + location[0].value + "&room=" + room[0].value + "&time_slot=" + time_slot[0].value;
+    var first_name_1 = document.getElementsByName("first_name");
+    //console.log(first_name_1[0].value);
+    var last_name_1 = document.getElementsByName("last_name");
+    var student_id_1 = document.getElementsByName("student_id");
+    var first_name_2 = document.getElementsByName("first_name_2");
+    var last_name_2 = document.getElementsByName("last_name_2");
+    var student_id_2 = document.getElementsByName("student_id_2");
+    var skill = document.getElementsByName("skill");
+    var instrument = document.getElementsByName("instrument");
+    var location = document.getElementsByName("location");
+    var room = document.getElementsByName("room");
+    var time_slot = document.getElementsByName("time_slot");
+    var getRequestString = "performance=" + performance[0].value + "&first_name="
+        + first_name_1[0].value + "&last_name=" + last_name_1[0].value + "&student_id="
+        + student_id_1[0].value + "&first_name_2=" + first_name_2[0].value + "&last_name_2="
+        + last_name_2[0].value + "&student_id_2=" + student_id_2[0].value + "&skill="
+        + skill[0].value + "&instrument=" + instrument[0].value + "&location="
+        + location[0].value + "&room=" + room[0].value + "&time_slot=" + time_slot[0].value;
 
     //console.log(getRequestString);
     const xhttp = new XMLHttpRequest();
