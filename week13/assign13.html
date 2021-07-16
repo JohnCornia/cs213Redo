@@ -14,32 +14,32 @@
 
          <legend>Piano Festival Registration</legend>
          <label for="performance">Performance Type</label>
-         <select name="performance" onblur="isDuet()">
+         <select id="performance" name="performance" onblur="isDuet()">
             <option>Solo</option>
             <option>Duet</option>
             <option>Concerto</option>
          </select><br><br>
          <label for="first_name">First Name</label>
-         <input type="text" name="first_name" required><br><br>
+         <input type="text" id="first_name" name="first_name" required><br><br>
          <label for="last_name">Last Name</label>
-         <input type="text" name="last_name" required><br><br>
+         <input type="text" id="last_name" name="last_name" required><br><br>
          <label for="student_id">Student ID</label>
-         <input type="text" name="student_id" required><br><br>
+         <input type="text" id="student_id" name="student_id" required><br><br>
          <label for="first_name_2">Second Musician First Name</label>
-         <input type="text" name="first_name_2" required><br><br>
+         <input type="text" id="first_name_2" name="first_name_2" required><br><br>
          <label for="last_name_2">Second Musician Last Name</label>
-         <input type="text" name="last_name_2" required><br><br>
+         <input type="text" id="last_name_2" name="last_name_2" required><br><br>
          <label for="student_id_2">Second Musician Student ID</label>
-         <input type="text" name="student_id_2" required><br><br>
+         <input type="text" id="student_id_2" name="student_id_2" required><br><br>
          <label for="skill">Skill Level</label>
-         <select name="skill">
+         <select id="skill" name="skill">
             <option>Beginner</option>
             <option>Intermediate</option>
             <option>Pre-advanced</option>
             <option>Advanced</option>
          </select><br><br>
          <label for="instrument">Instrument</label>
-         <select name="instrument">
+         <select id="instrument" name="instrument">
             <option>Piano</option>
             <option>Voice</option>
             <option>String</option>
@@ -47,7 +47,7 @@
             <option>Other</option>
          </select><br><br>
          <label for="location">Building</label>
-         <select name="location">
+         <select id="location" name="location">
             <option>Snow</option>
             <option>Austin</option>
             <option>Benson</option>
@@ -55,9 +55,9 @@
             <option>Other</option>
          </select><br><br>
          <label for="room">Room</label>
-         <input type="text" name="room" required><br><br>
+         <input type="text" id="room" name="room" required><br><br>
          <label for="time_slot">Time Slot</label>
-         <input type="text" name="time_slot" required><br><br>
+         <input type="text" id="time_slot" name="time_slot" required><br><br>
          <button onclick="ajaxRequest(), buildTable()">Register</button>
          <button type="reset">Clear</button><br><br>
          <table id="registry"></table>
