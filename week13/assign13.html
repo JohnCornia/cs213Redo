@@ -9,7 +9,7 @@
 </head>
 
 <body onload="buildTable(), document.getElementsByName('performance')[0].focus()">
-   <form onsubmit="event.preventDefault ()">
+   <form onsubmit="event.preventDefault()">
       <fieldset>
 
          <legend>Piano Festival Registration</legend>
@@ -58,7 +58,7 @@
          <input type="text" id="room" name="room" required><br><br>
          <label for="time_slot">Time Slot</label>
          <input type="text" id="time_slot" name="time_slot" required><br><br>
-         <button onclick="ajaxRequest(), buildTable()">Register</button>
+         <button onclick="ajaxRequest()">Register</button>
          <button type="reset">Clear</button><br><br>
          <table id="registry"></table>
       </fieldset>

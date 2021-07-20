@@ -72,6 +72,8 @@ function ajaxRequest() {
 
     xhttp.open("GET", "./assign13.php?" + getRequestString, true);
     xhttp.send();
+
+    buildTable();
 }
 
 function buildTable() {
